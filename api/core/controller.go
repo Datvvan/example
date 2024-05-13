@@ -24,6 +24,9 @@ func (controller *Controller) GetModule(c echo.Context) error {
 }
 
 func (controller *Controller) Detail(c echo.Context) error {
-	return c.JSON(http.StatusOK, util.SuccessResponse("Body of core menu 1"))
+	resp := &CoreDetail{
+		Text: "Body of core menu 1",
+	}
+	return c.JSON(http.StatusOK, util.SuccessResponse(resp))
 
 }
